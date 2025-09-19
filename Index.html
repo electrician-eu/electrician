@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electricista Certificado| Instalaciones, Averías y Boletines</title>
+	<meta name="description" content="Servicios de electricidad en Alicante: instalaciones, boletines CIE, cuadros, averías, puntos de carga y domótica. Electricista certificado.">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/26a1.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-2T6wqOe2W3z8b8H9T8+Q7r9jv3yq8gC6N7l6m0hP0o2d2jJ3yWv7cUQ7VJ2dX2t8mLwYQ3wYbqQ5s3Zk4Qy6Yg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--primary:#1f2937;--secondary:#f59e0b;--accent:#0ea5e9;--light:#f3f4f6;--dark:#111827;--success:#10b981}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+    body{background:#f9fafb;color:#111827;line-height:1.6}
+    .container{width:90%;max-width:1200px;margin:0 auto;padding:0 15px}
+    /* Header */
+    header{background:linear-gradient(135deg,var(--primary),#0b1220);color:#fff;padding:.8rem 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+    nav{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.35rem;font-weight:700;color:#fff;text-decoration:none;white-space:nowrap}
+    .logo span{color:var(--secondary)}
+    .nav-links{display:flex;list-style:none}
+    .nav-links li{margin-left:1.25rem}
+    .nav-links a{color:#fff;text-decoration:none;font-weight:500;transition:opacity .2s}
+    .nav-links a:hover{opacity:.8}
+    .lang-selector{display:flex;gap:8px;align-items:center}
+    .lang-btn{border:1px solid #fff;background:transparent;color:#fff;padding:.2rem .5rem;border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .lang-btn img{width:18px;height:12px;object-fit:cover;border-radius:2px}
+    /* Hero */
+    .hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('file:///C:/Users/Manuel/Downloads/Electrician%20Web/img/banner.jpg') center/cover no-repeat;color:#fff;padding:5rem 0;text-align:center}
+    .hero-content{max-width:860px;margin:0 auto}
+    .hero h1{font-size:2.6rem;margin-bottom:1rem}
+    .hero p{font-size:1.1rem;margin-bottom:1.5rem;opacity:.95}
+    .cta-wrap{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-block;background:var(--secondary);color:#111827;padding:.8rem 1.25rem;border-radius:6px;text-decoration:none;font-weight:700;transition:transform .15s,filter .2s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(.95)}
+    .btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+    /* Badges */
+    .badges{margin-top:1.25rem;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+    .badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:.3rem .6rem;border-radius:999px;font-size:.85rem}
+    /* Services */
+    .services{padding:4rem 0;background:#fff}
+    .section-title{text-align:center;margin-bottom:2.25rem;color:var(--primary)}
+    .section-title h2{font-size:2.1rem;margin-bottom:.6rem}
+    .section-title p{color:#6b7280;max-width:720px;margin:0 auto}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+    .service-card{background:var(--light);border-radius:10px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+    .service-card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,.08)}
+    .service-img{height:200px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .service-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .service-content{padding:1.2rem}
+    .service-content h3{color:var(--primary);margin-bottom:.5rem}
+    .service-content ul{padding-left:1.2rem;color:#374151}
+    /* About */
+    .about{padding:4rem 0;background:#f3f4f6}
+    .about-content{display:grid;grid-template-columns:1fr 1fr;gap:2.25rem;align-items:center}
+    .about h2{color:var(--primary);margin-bottom:.8rem}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:1rem}
+    .card i{color:var(--secondary);margin-right:.4rem}
+    /* Testimonials */
+    .testimonials{padding:4rem 0;background:#fff}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+    .testimonial-card{background:var(--light);padding:1.2rem;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.04)}
+    .testimonial-text{font-style:italic;margin-bottom:.7rem}
+    .testimonial-author{font-weight:700;color:var(--primary)}
+    /* Contact */
+    .contact{padding:4rem 0;background:linear-gradient(135deg,var(--primary),#0b1220);color:#fff}
+    .contact .section-title h2{color:#fff}
+    .contact-info{text-align:center;max-width:700px;margin:0 auto}
+    .contact-details{list-style:none;margin:1rem 0 0}
+    .contact-details li{margin:.6rem 0;display:flex;align-items:center;justify-content:center}
+    .contact-details i{margin-right:.6rem;color:var(--secondary);font-size:1.15rem;min-width:20px}
+    .contact-details a{color:#fff;text-decoration:none}
+    .contact-actions{margin-top:1rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+    /* Footer */
+    footer{background:var(--dark);color:#fff;padding:1.6rem 0;text-align:center}
+    .footer-content{display:flex;justify-content:space-between;align-items:center}
+    .social-links{display:flex;list-style:none}
+    .social-links li{margin-left:1rem}
+    .social-links a{color:#fff;font-size:1.35rem}
+    /* Responsive */
+    @media(max-width:860px){.nav-links{display:none}.about-content{grid-template-columns:1fr}.footer-content{flex-direction:column}.social-links{margin-top:1rem}}
+  </style>
+</head>
+<body>
+ <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo" aria-label="Inicio Electricista Certificado">⚡ Electricista <span>Certificado</span></a>
+        <ul class="nav-links">
+          <li><a href="#services" data-i18n="menu.services">Servicios</a></li>
+          <li><a href="#about" data-i18n="menu.about">Nosotros</a></li>
+          <li><a href="#testimonials" data-i18n="menu.testimonials">Testimonios</a></li>
+          <li><a href="#contact" data-i18n="menu.contact">Contacto</a></li>
+        </ul>
+        <div class="lang-selector" aria-label="Idioma">
+          <button class="lang-btn" onclick="setLanguage('es')">
+            <img alt="ES" src="file:///C:/Users/Manuel/Downloads/Electrician%20Web/flags/es.png"/> ES
+          </button>
+          <button class="lang-btn" onclick="setLanguage('en')">
+            <img alt="EN" src="file:///C:/Users/Manuel/Downloads/Electrician%20Web/flags/uk.png"/> EN
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 data-i18n="hero.title">Electricista certificado</h1>
+        <p data-i18n="hero.subtitle">Instalaciones, averías, reformas eléctricas y boletines. Trabajo garantizado, cumplimiento normativo y trato cercano.</p>
+        <div class="cta-wrap">
+          <a class="btn" href="tel:+34965144226" data-i18n="hero.button.call">Llamar ahora</a>
+          <a class="btn btn-outline" href="#contact" data-i18n="hero.button.quote">Solicitar presupuesto</a>
+        </div>
+        <div class="badges">
+          <span class="badge" data-i18n="hero.badge1">REBT • Certificado</span>
+          <span class="badge" data-i18n="hero.badge2">Boletines y legalizaciones</span>
+          <span class="badge" data-i18n="hero.badge3">Solución de Averías</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="services.title">Servicios de Electricidad</h2>
+        <p data-i18n="services.subtitle">Soluciones para hogares, comunidades y comercios. Cumplimos normativa REBT e ITC BT.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img"><img src="./img/reformas.jpg" alt="Instalaciones eléctricas"></div>
+          <div class="service-content">
+            <h3 data-i18n="services.install.title">Instalaciones y reformas</h3>
+            <ul>
+              <li data-i18n="services.install.i1">Viviendas, locales y comunidades</li>
+              <li data-i18n="services.install.i2">Cuadros eléctricos y derivaciones</li>
+              <li data-i18n="services.install.i3">Aumento de potencia y adecuación REBT</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img"><img src="./img/Boletin.png" alt="Boletines eléctricos"></div>
+          <div class="service-content">
+            <h3 data-i18n="services.cert.title">Boletines y legalizaciones</h3>
+            <ul>
+              <li data-i18n="services.cert.i1">Certificados de instalación (CIE)</li>
+              <li data-i18n="services.cert.i2">Cambios de titular y altas</li>
+              <li data-i18n="services.cert.i3">Inspecciones y dictámenes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img"><img src="./img/Averías.jpg" alt="Averías eléctricas"></div>
+          <div class="service-content">
+            <h3 data-i18n="services.repairs.title">Averías y mantenimiento</h3>
+            <ul>
+              <li data-i18n="services.repairs.i1">Cortocircuitos, diferenciales y tomas</li>
+              <li data-i18n="services.repairs.i2">Iluminación LED y eficiencia</li>
+              <li data-i18n="services.repairs.i3">Mantenimiento preventivo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img"><img src="./img/carga.png" alt="Puntos de carga"></div>
+          <div class="service-content">
+            <h3 data-i18n="services.ev.title">Puntos de carga y domótica</h3>
+            <ul>
+              <li data-i18n="services.ev.i1">Wallbox vivienda y garaje</li>
+              <li data-i18n="services.ev.i2">Programación y protecciones</li>
+              <li data-i18n="services.ev.i3">Domótica básica (WiFi, temporizadores)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img"><img src="./img/seguridad.jpg" alt="Protecciones eléctricas"></div>
+          <div class="service-content">
+            <h3 data-i18n="services.prot.title">Protecciones y seguridad</h3>
+            <ul>
+              <li data-i18n="services.prot.i1">PIAs, magnetotérmicos y diferenciales</li>
+              <li data-i18n="services.prot.i2">Protección contra sobretensiones</li>
+              <li data-i18n="services.prot.i3">Puestas a tierra y continuidad</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img"><img src="./img/Iluminación.jpg" alt="Iluminación"></div>
+          <div class="service-content">
+            <h3 data-i18n="services.light.title">Iluminación y ambientación</h3>
+            <ul>
+              <li data-i18n="services.light.i1">Diseño e instalación LED</li>
+              <li data-i18n="services.light.i2">Exterior, jardín y piscina</li>
+              <li data-i18n="services.light.i3">Tiras LED y sensores de movimiento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 data-i18n="about.why.title">¿Por qué elegirme?</h2>
+          <p data-i18n="about.why.p1">Soy electricista certificado con experiencia en viviendas y comercios en la Vega Baja de Alicante. Trabajo limpio, seguro y conforme a normativa.</p>
+          <p data-i18n="about.why.p2">Ofrezco asesoría para mejorar eficiencia energética, actualizar instalaciones y cumplir requisitos de distribuidoras.</p>
+          <p data-i18n="about.why.p3">Presupuesto claro, materiales de calidad y garantía por escrito.</p>
+        </div>
+        <div>
+          <h2 data-i18n="about.values.title">Compromisos</h2>
+          <div class="cards">
+            <div class="card"><i class="fa-solid fa-shield-halved"></i><strong data-i18n="about.values.v1">Seguridad y normativa</strong><br/><span data-i18n="about.values.v1d">REBT, ITC BT y documentación al día.</span></div>
+            <div class="card"><i class="fa-solid fa-clock"></i><strong data-i18n="about.values.v2">Puntualidad</strong><br/><span data-i18n="about.values.v2d">Horarios acordados y mínima interrupción.</span></div>
+            <div class="card"><i class="fa-solid fa-file-invoice"></i><strong data-i18n="about.values.v3">Transparencia</strong><br/><span data-i18n="about.values.v3d">Precios Competitivos.</span></div>
+            <div class="card"><i class="fa-solid fa-handshake-angle"></i><strong data-i18n="about.values.v4">Garantía</strong><br/><span data-i18n="about.values.v4d">Servicio postventa y soporte.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="testimonials.title">Opiniones de clientes</h2>
+        <p data-i18n="testimonials.subtitle">La mejor garantía es la satisfacción de quien confía en mí</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonials.t1.text">“Instaló un cuadro nuevo y solucionó disparos del diferencial. Todo explicado y con certificado.”</p>
+          <p class="testimonial-author" data-i18n="testimonials.t1.author">- Carmen R., La Zenia</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonials.t2.text">“Cambió toda la iluminación a LED en el local y bajó nuestro consumo. Trabajo impecable.”</p>
+          <p class="testimonial-author" data-i18n="testimonials.t2.author">- Jorge M., Playa Flamenca</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonials.t3.text">“Tramitó el boletín para alta de luz y nos orientó con la distribuidora. Rápido y profesional.”</p>
+          <p class="testimonial-author" data-i18n="testimonials.t3.author">- Family S., Vega Baja, Alicante</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-i18n="contact.title">Contacto</h2>
+        <p data-i18n="contact.subtitle">Pide tu presupuesto sin compromiso</p>
+      </div>
+      <div class="contact-info">
+        <h3 data-i18n="contact.info">Información de Contacto</h3>
+        <ul class="contact-details">
+          <li><i class="fas fa-map-marker-alt"></i><a href="https://maps.google.com/?q=Calle%20de%20la%20Nutria%208%2C%2003189%2C%20Orihuela%2C%20Alicante" target="_blank" rel="noopener" data-i18n="contact.addr">Calle de la Nutria 8, 03189, Orihuela, Alicante</a></li>
+          <li><i class="fas fa-phone"></i><a href="tel:+34965144226" data-i18n="contact.phone">+34 965 144 226</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:electricista.alacant@gmail.com" data-i18n="contact.mail">electricista.alacant@gmail.com</a></li>
+          <li><i class="fas fa-clock"></i><span data-i18n="contact.hours">Lunes a Viernes: 9:00 - 17:00, Sábados: 9:00 - 15:00</span></li>
+        </ul>
+        <div class="contact-actions">
+          <a class="btn" href="tel:+34965144226"><i class="fa-solid fa-phone"></i> <span data-i18n="contact.cta.call">Llamar</span></a>
+          <a class="btn" href="https://wa.me/34684744000?text=Hola%20Electricista,%20quisiera%20un%20presupuesto" rel="noopener" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          
+          <a class="btn btn-outline" href="mailto:electricista.alacant@gmail.com"><i class="fa-solid fa-envelope"></i> <span data-i18n="contact.cta.mail">Escribir</span></a>
+          <a class="btn btn-outline" href="#services"><i class="fa-solid fa-list-check"></i> <span data-i18n="contact.cta.services">Ver servicios</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>© <span id="year"></span> Electricista Certificado — <span data-i18n="footer.rights">Todos los derechos reservados</span></p>
+        <ul class="social-links">
+          <li><a href="tel:+34965144226" aria-label="Teléfono"><i class="fas fa-phone"></i></a></li>
+          <li><a href="mailto:electricista.alacant@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+          <li><a href="https://maps.google.com/?q=Calle%20de%20la%20Nutria%208%2C%2003189%2C%20Orihuela%2C%20Alicante" target="_blank" rel="noopener" aria-label="Mapa"><i class="fas fa-map-marker-alt"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD LocalBusiness (Electrician) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Electrician",
+    "name": "Electricista Certificado",
+    "image": "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1400&auto=format&fit=crop",
+    "address": {"@type":"PostalAddress","streetAddress":"Calle de la Nutria 8","postalCode":"03189","addressLocality":"Orihuela","addressRegion":"Alicante","addressCountry":"ES"},
+    "telephone": "+34 965 144 226",
+    "email": "electricista.alacant@gmail.com",
+    "areaServed": "Orihuela Costa, Alicante",
+    "openingHours": ["Mo-Fr 09:00-17:00","Sa 09:00-15:00"],
+    "url": ""
+  }
+  </script>
+
+  <!-- Translations -->
+  <script>
+    const t={
+      es:{
+        menu:{services:"Servicios",about:"Nosotros",testimonials:"Testimonios",contact:"Contacto"},
+        hero:{title:"Electricista certificado",subtitle:"Instalaciones, averías, reformas eléctricas y boletines. Trabajo garantizado, cumplimiento normativo y trato cercano.",button:{call:"Llamar ahora",quote:"Solicitar presupuesto"},badge1:"REBT • Certificado",badge2:"Boletines y legalizaciones",badge3:"Solución de Averías"},
+        services:{title:"Servicios de Electricidad",subtitle:"Soluciones para hogares, comunidades y comercios. Cumplimos normativa REBT e ITC BT.",
+          install:{title:"Instalaciones y reformas",i1:"Viviendas, locales y comunidades",i2:"Cuadros eléctricos y derivaciones",i3:"Aumento de potencia y adecuación REBT"},
+          cert:{title:"Boletines y legalizaciones",i1:"Certificados de instalación (CIE)",i2:"Cambios de titular y altas",i3:"Inspecciones y dictámenes"},
+          repairs:{title:"Averías y mantenimiento",i1:"Cortocircuitos, diferenciales y tomas",i2:"Iluminación LED y eficiencia",i3:"Mantenimiento preventivo"},
+          ev:{title:"Puntos de carga y domótica",i1:"Wallbox vivienda y garaje",i2:"Programación y protecciones",i3:"Domótica básica (WiFi, temporizadores)"},
+          prot:{title:"Protecciones y seguridad",i1:"PIAs, magnetotérmicos y diferenciales",i2:"Protección contra sobretensiones",i3:"Puestas a tierra y continuidad"},
+          light:{title:"Iluminación y ambientación",i1:"Diseño e instalación LED",i2:"Exterior, jardín y piscina",i3:"Tiras LED y sensores de movimiento"}
+        },
+        about:{why:{title:"¿Por qué elegirme?",p1:"Soy electricista certificado con experiencia en viviendas y comercios en la Vega Baja de Alicante. Trabajo limpio, seguro y conforme a normativa.",p2:"Ofrezco asesoría para mejorar eficiencia energética, actualizar instalaciones y cumplir requisitos de distribuidoras.",p3:"Presupuesto claro, materiales de calidad y garantía por escrito."},
+               values:{title:"Compromisos",v1:"Seguridad y normativa",v1d:"REBT, ITC BT y documentación al día.",v2:"Puntualidad",v2d:"Horarios acordados y mínima interrupción.",v3:"Transparencia",v3d:"Precios Competitivos.",v4:"Garantía",v4d:"Servicio postventa y soporte."}},
+        testimonials:{title:"Opiniones de clientes",subtitle:"La mejor garantía es la satisfacción de quien confía en mí",
+          t1:{text:"“Instaló un cuadro nuevo y solucionó disparos del diferencial. Todo explicado y con certificado.”",author:"- Carmen R., La Zenia"},
+          t2:{text:"“Cambió toda la iluminación a LED en el local y bajó nuestro consumo. Trabajo impecable.”",author:"- Jorge M., Playa Flamenca"},
+          t3:{text:"“Tramitó el boletín para alta de luz y nos orientó con la distribuidora. Rápido y profesional.”",author:"- Family S., Vega Baja de Alicante"}
+        },
+        contact:{title:"Contacto",subtitle:"Pide tu presupuesto sin compromiso",info:"Información de Contacto",addr:"Calle de la Nutria 8, 03189, Orihuela, Alicante",phone:"+34 965 144 226",mail:"electricista.alacant@gmail.com",hours:"Lunes a Viernes: 9:00 - 17:00, Sábados: 9:00 - 15:00",cta:{call:"Llamar",mail:"Escribir",services:"Ver servicios"}},
+        footer:{rights:"Todos los derechos reservados"}
+      },
+      en:{
+        menu:{services:"Services",about:"About",testimonials:"Testimonials",contact:"Contact"},
+        hero:{title:"Certified Electrician",subtitle:"Installations, faults, electrical refurbishments and certificates. Guaranteed work and compliance.",button:{call:"Call now",quote:"Request a quote"},badge1:"REBT • Certified",badge2:"Certificates & paperwork",badge3:"Troubleshooting"},
+        services:{title:"Electrical Services",subtitle:"Solutions for homes, communities and shops. REBT & ITC BT compliant.",
+          install:{title:"Installations & refits",i1:"Homes, shops & communities",i2:"Panels and sub‑mains",i3:"Power increases & compliance"},
+          cert:{title:"Certificates & legalisation",i1:"Installation certificates (CIE)",i2:"Ownership changes & new supply",i3:"Inspections and reports"},
+          repairs:{title:"Faults & maintenance",i1:"Shorts, RCDs and sockets",i2:"LED lighting & efficiency",i3:"Preventive maintenance"},
+          ev:{title:"EV charging & smart home",i1:"Wallbox at home/garage",i2:"Setup & protections",i3:"Basic automations (WiFi timers)"},
+          prot:{title:"Protection & safety",i1:"Breakers and RCDs",i2:"Surge protection",i3:"Earthing & continuity"},
+          light:{title:"Lighting & ambience",i1:"LED design & install",i2:"Outdoor, garden & pool",i3:"LED strips & motion sensors"}
+        },
+        about:{why:{title:"Why choose me?",p1:"Certified electrician serving homes and shops in Vega Baja, Alicante.",p2:"Advice on efficiency, upgrades and utility requirements.",p3:"Clear quotes, quality materials and written warranty."},
+               values:{title:"Commitments",v1:"Safety & code",v1d:"REBT, ITC BT and paperwork up to date.",v2:"Punctuality",v2d:"Agreed schedules, minimal disruption.",v3:"Transparency",v3d:"Competitive Prices.",v4:"Warranty",v4d:"After‑sales support."}},
+        testimonials:{title:"Customer reviews",subtitle:"Satisfaction is the best guarantee",
+          t1:{text:"“Installed a new panel and fixed RCD trips. Explained everything and provided a certificate.”",author:"- Carmen R., La Zenia"},
+          t2:{text:"“Switched our shop to LED and cut consumption. Impeccable work.”",author:"- Jorge M., Playa Flamenca"},
+          t3:{text:"“Managed the certificate for a new supply and guided us with the utility. Fast and professional.”",author:"- Family S., Vega Baja, Alicante"}
+        },
+        contact:{title:"Contact",subtitle:"Request a no‑obligation quote",info:"Contact Information",addr:"Calle de la Nutria 8, 03189, Orihuela, Alicante",phone:"+34 965 144 226",mail:"electricista.alacant@gmail.com",hours:"Monday–Friday: 9:00–17:00, Saturday: 9:00–15:00",cta:{call:"Call",mail:"Email",services:"See services"}},
+        footer:{rights:"All rights reserved"}
+      }
+    };
+
+    function setLanguage(lang){
+      localStorage.setItem('preferredLang',lang);
+      const html=document.documentElement; html.setAttribute('lang',lang); html.setAttribute('dir','ltr');
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const path=el.getAttribute('data-i18n').split('.');
+        let val=t[lang]; path.forEach(k=>{if(val) val=val[k]});
+        if(typeof val==='string') el.textContent=val;
+        if(typeof val==='object' && el.tagName==='A') el.textContent=val; // fallback
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+        const path=el.getAttribute('data-i18n-placeholder').split('.');
+        let val=t[lang]; path.forEach(k=>{if(val) val=val[k]});
+        if(typeof val==='string') el.setAttribute('placeholder',val);
+      });
+    }
+    setLanguage(localStorage.getItem('preferredLang')||'es');
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
